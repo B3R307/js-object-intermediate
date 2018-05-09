@@ -15,11 +15,30 @@
 */
 
 
+let dog = {
+  name: 'Abby',
+  age: 7,
+  legs: 4
+}
 
+/*
+ * Write the logic '.getDogAgeInHumanYears()' method for `dog` below :
+*/
 
-
-
+dog.getDogAgeInHumanYears = function(){
+  // Your code here
+}
 
 
 
 //*~*~*-*~*~*~*~*~ Don't Touch *~*~*~*~*~*~*~*~*~*~*~
+
+console.assert (typeof dog.getDogAgeInHumanYears === 'function')
+console.assert (dog.getDogAgeInHumanYears() === 49)
+
+// Instructor Evaluation
+// checking `getDogAgeInHumanYears` method with other context with .call method
+//   https://docs.microsoft.com/en-us/scripting/javascript/reference/call-method-function-javascript
+console.assert( dog.getDogAgeInHumanYears.call({ age: 3, name: 'Jenny' }) === 21)
+console.assert( dog.getDogAgeInHumanYears.call({ age: 10, name: 'Rufus' }) === 70)
+console.assert( dog.getDogAgeInHumanYears.call({ age: 1, name: 'Mia' }) === 7)
