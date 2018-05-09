@@ -27,6 +27,9 @@ let dog = {
 
 dog.getDogAgeInHumanYears = function(){
   // Your code here
+  var humanYears = (this.age*7)
+  console.log(humanYears)
+  return humanYears
 }
 
 
@@ -42,3 +45,4 @@ console.assert (dog.getDogAgeInHumanYears() === 49)
 console.assert( dog.getDogAgeInHumanYears.call({ age: 3, name: 'Jenny' }) === 21)
 console.assert( dog.getDogAgeInHumanYears.call({ age: 10, name: 'Rufus' }) === 70)
 console.assert( dog.getDogAgeInHumanYears.call({ age: 1, name: 'Mia' }) === 7)
+console.assert( dog.getDogAgeInHumanYears.call({ age: 5, name: 'Roy' }) === 35)
