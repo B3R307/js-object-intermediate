@@ -11,10 +11,32 @@
  *
 **/
 
+var countTheHoles = function(numList){
+   var cntHol = 0;
+   // // console.log(typeof num);
+   //  console.log(num);
+   var numH = numList.toString();
+   // console.log(typeof numH)
+   var count = 0;
+   var totHol = 0;
 
-
-
-var countTheHoles = function(){}
+   for(var i = 0; i < numH.length; i++){
+     // console.log(typeof(numH[i]));
+     var nu = parseInt(numH[i]);
+     // console.log(typeof nu);
+       // console.log(nu);
+    if(nu === 8){
+       totHol = 2;
+    } else if(nu === 0 || nu === 4 || nu === 6 || nu === 9){
+        totHol = 1;
+    } else{
+      totHol = 0;
+    }
+       count = count + totHol
+    }
+    console.log(count);
+    return count
+}
 
 
 //~+~+~+~+~+~+~+~Don't Touch~+~+~++~+~+~+~+~+~+~+

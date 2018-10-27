@@ -10,12 +10,17 @@
  *
 */
 
+function getKeys(personObj){
+	var personArr = [];
 
+  for(var str in personObj){
+		var x = str
+      personArr.push(x)
+	}
+  console.log(personArr);
+  return personArr
 
-
-
-
-
+}
 
 
 //*~*~*-*~*~*~*~*~ Don't Touch *~*~*~*~*~*~*~*~*~*~*~

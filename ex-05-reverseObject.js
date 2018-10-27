@@ -12,6 +12,15 @@
  *
 **/
 
+ function reverseObject(obj){
+	 var newObj = {}
+
+   for( var x in obj){
+		 newObj[obj[x]] = x
+	 }
+    console.log(newObj);
+    return newObj
+ }
 
 
 

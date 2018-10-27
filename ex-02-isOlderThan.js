@@ -16,13 +16,55 @@ let someGirl = {
  * On the `someGirl` object, write the '.isOlderThan()' method and its logic  below :
 */
 
+someGirl.isOlderThan = function(someNum){
+   var moreOld = true
+
+   if(this.age <= someNum){
+     moreOld = false
+
+   }
+   console.log(moreOld)
+   return moreOld
+}
+
+// //*~*~*-*~*~*~*~*~ Don't Touch *~*~*~*~*~*~*~*~*~*~*~
+//
+// console.assert (typeof someGirl.isOlderThan === 'function')
+// console.assert (someGirl.isOlderThan(21) === false)
+// console.assert (someGirl.isOlderThan(44) === false)
+// console.assert (someGirl.isOlderThan(14) === true)
+// console.assert (someGirl.isOlderThan(8) === true)
+// console.assert (someGirl.isOlderThan(20) === false)
+//
+// // Instructor Evaluation
+// // checking `isOlderThan` method with other context with .call method
+// //   https://docs.microsoft.com/en-us/scripting/javascript/reference/call-method-function-javascript
+// console.assert( someGirl.isOlderThan.call({ age: 20 }) === false)
+// console.assert( someGirl.isOlderThan.call({ age: 30 }) === false)
+
+// *~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
+// *~*~*~*~*~*~*~* Tests (Don't Touch) *~*~*~*~*~*~*~*~*
+// *~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
+
+console.group('ex-02');
+  console.log('%cFunction: isOlderThan', 'background-color: green; color: white')
+console.groupEnd();
 
 
-
-
-//*~*~*-*~*~*~*~*~ Don't Touch *~*~*~*~*~*~*~*~*~*~*~
+/* ----------------------- TEST-1  ----------------------- */
+// Function confirms that isOlderThan is a function
+/* ------------------------------------------------------ */
+console.log('TEST-1');
 
 console.assert (typeof someGirl.isOlderThan === 'function')
+
+
+/* ----------------------- TEST-2  ----------------------- */
+// Function confirms that .isOlderThan(arg) operates
+//    on `age` property and returns boolean
+/* ------------------------------------------------------ */
+console.log('TEST-2');
+
 console.assert (someGirl.isOlderThan(21) === false)
 console.assert (someGirl.isOlderThan(44) === false)
 console.assert (someGirl.isOlderThan(14) === true)
@@ -30,9 +72,18 @@ console.assert (someGirl.isOlderThan(8) === true)
 console.assert (someGirl.isOlderThan(20) === false)
 
 
-// Instructor Evaluation
-// checking `isOlderThan` method with other context with .call method
-//   https://docs.microsoft.com/en-us/scripting/javascript/reference/call-method-function-javascript
-console.assert( someGirl.isOlderThan.call({ age: 20 }) === false)
-console.assert( someGirl.isOlderThan.call({ age: 30 }) === false)
-console.assert( someGirl.isOlderThan.call({ age: 15 }) === true)
+/* ----------------------- TEST-2  ----------------------- */
+// checking `isOlderThan` method with other object context
+//   using .call method
+/* ------------------------------------------------------ */
+console.log('TEST-3');
+
+console.assert( someGirl.isOlderThan.call({ age: 20 }, 35) === false)
+console.assert( someGirl.isOlderThan.call({ age: 30 }, 40) === false)
+console.assert( someGirl.isOlderThan.call({ age: 15 }, 10) === true)
+
+
+/* ---------------------------------------------------- */
+/* ----------------------- END  ----------------------- */
+console.log('\n\n');
+// console.assert( someGirl.isOlderThan.call({ age: 15 }) === true)
